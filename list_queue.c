@@ -17,11 +17,11 @@ int empty(queue *q)
   // uses same teknik as in stack
   if (q->size == 0)
   {
-    return true;
+    return 1;
   }
   else
   {
-    return false;
+    return 0;
   }
 }
 
@@ -30,11 +30,19 @@ void enqueue(queue *q, int x)
   // Add your enqueue function
   // we will make a new placeholder to hold ouer new x value.
   // it will be a pointer to qnode
+
   qnode *enq;
   enq = malloc(sizeof(qnode));
   enq->next = NULL;
   enq->data = x;
-  q->rear->next = enq;
+  if (empty(q) == 1)
+  {
+    q->front = enq;
+  }
+  else
+  {
+    q->rear->next = enq;
+  }
   q->rear = enq;
   q->size += 1;
 }
@@ -44,12 +52,12 @@ int dequeue(queue *q)
   // Add your dequeue functio
   // again thinking it has pop in a stack from the front side.
   int x;
-  qnode *deq = malloc(sizeof(qnode));
+  qnode *deq;
 
   deq = q->front;
   x = q->front->data;
-  q->front->next = deq;
-  q->front = deq;
+  q->front = q->front->next;
+  free(deq);
   q->size -= 1;
 
   return (x);
