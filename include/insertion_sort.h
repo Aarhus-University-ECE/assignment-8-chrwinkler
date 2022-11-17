@@ -1,6 +1,6 @@
 #ifndef __INSERTION_SORT_H_
 #define __INSERTION_SORT_H_
-#include "linked_list.h"
+#include "linked_list.h" // typedeff
 #include <stdbool.h>
 #include <stdlib.h>
 #include <stdio.h>

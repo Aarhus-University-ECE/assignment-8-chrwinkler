@@ -1,0 +1,29 @@
+#include "insertion_sort.h"
+#include "linked_list.h"
+#include <assert.h>
+
+void sort(linked_list *llPtr)
+{
+    // Add your sort function here
+    // pre-condition
+    assert(0 <= llPtr->head);
+    linked_list *backPtr = NULL;
+
+    // post-condition
+    /*
+     * lokking in insertion_sort.h we se linked_list.h include in both this and .h
+     * in linked_list.c we found to importen function
+     * insertFront and *swap
+     * this can be used to forfill our post condition to
+     */
+
+    while (llPtr->head > backPtr->head)
+    {
+        if (llPtr->head < backPtr->head)
+            insertFront(backPtr, llPtr); /* element is in correct position */
+        else
+        {
+            *swap(llPtr, backPtr)
+        }
+    }
+}

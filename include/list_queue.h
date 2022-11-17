@@ -3,6 +3,7 @@
 #include <assert.h>
 #include <stdlib.h>
 
+
 typedef struct qnode
 {
   int data;
@@ -16,11 +17,9 @@ typedef struct queue
   qnode *rear;
 } queue;
 
-
 void init_queue(queue *q);
 int empty(queue *q);
 void enqueue(queue *q, int x);
 int dequeue(queue *q);
-
 
 #endif // __LIST_QUEUE_H_

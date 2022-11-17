@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+// typedef used for insertion_sort.h
 typedef struct node
 {
   int data;
